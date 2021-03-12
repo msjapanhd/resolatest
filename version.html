@@ -4,7 +4,8 @@
   <label id="lbBver">test</label></br>
   <label id="lbBMajorVer">test</label></br>
   <label id="lbAname">test</label></br>
-  <label id="lbAgent">test</label>
+  <label id="lbAgent">test</label></br>
+  <label id="OSV">test</label>
   
 <script type="text/javascript">
 var nVer = navigator.appVersion;
@@ -64,6 +65,11 @@ if (isNaN(majorVersion)) {
  fullVersion  = ''+parseFloat(navigator.appVersion); 
  majorVersion = parseInt(navigator.appVersion,10);
 }
+var OSName="Unknown OS";
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
 
 console.log(''
  +'Browser name  = '+browserName+'<br>'
@@ -77,6 +83,7 @@ console.log(''
   document.getElementById('lbBMajorVer').innerHTML = majorVersion;
   document.getElementById('lbAname').innerHTML = navigator.appName;
   document.getElementById('lbAgent').innerHTML = navigator.userAgent;
+   document.getElementById('OSV').innerHTML = OSName;
 </script>
   
  </body>
