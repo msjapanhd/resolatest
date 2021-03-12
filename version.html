@@ -30,10 +30,15 @@ else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
  browserName = "Microsoft Internet Explorer";
  fullVersion = nAgt.substring(verOffset+5);
 }
-// In Chrome, the true version is after "Chrome" 
+// In Chrome-PC, the true version is after "Chrome" 
 else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
  browserName = "Chrome";
  fullVersion = nAgt.substring(verOffset+7);
+}
+ // In Chrome-IOS, the true version is after "CriOS" 
+else if ((verOffset=nAgt.indexOf("CriOS"))!=-1) {
+ browserName = "Chrome";
+ fullVersion = nAgt.substring(CriOS+7);
 }
 // In Safari, the true version is after "Safari" or after "Version" 
 else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
